@@ -9,7 +9,8 @@
   .information,
   .contact,
   .newsletter,
-  .socialMedia {
+  .socialMedia,
+  .general {
     flex: 1;
   }
   
@@ -34,4 +35,23 @@
   .information a:hover,
   .contact a:hover {
     text-decoration: underline;
+  }
+
+  .newsletter button{
+    background-color: #535E48;
+    color: #FFFFFF;
+    padding: 0.5rem 3rem;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .socialMedia Link {
+    padding: 5px;
+  }
+
+  .newsletter input {
+    padding: 0.5rem 3rem;
+    border: none;
+    background-color: #F8F8F8;
   }

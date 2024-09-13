@@ -2,6 +2,10 @@ import Link from 'next/link';
 import styles from './footer.module.css';
 import Image from 'next/image';
 import logo from './logo.webp';
+import facebook from './Facebook.png';
+import instagram from './Instagram.png';
+import linkedin from './linkedin.png';
+import youtube from './Youtube.png';
 
 const Footer = () => {
     return (
@@ -15,6 +19,7 @@ const Footer = () => {
           <p>customized packaging</p> 
           <p>solutions that create value</p>
           <p>for you and your customers</p>
+          <br></br>
           <h3>Opening hours:</h3>
           <p>Monday to Friday 8:30 - 17:30</p>
         </div>
@@ -33,25 +38,40 @@ const Footer = () => {
           <p>Phone: (+45) 42396966</p>
           <p>Ehlersvej 11,</p>
           <p>DK-2800 Hellerup</p>
-        </div>
-        <div className={styles.socialMedia}>
+          <br></br>
           <h3>Follow us</h3>
-          {/* Add your social media links here */}
+          <Link href="https://www.facebook.com/packwise.dk">
+              <Image src={facebook} alt="Facebook" width={20}/>
+          </Link>
+          <Link href="https://www.instagram.com/packwise.dk/">
+              <Image src={instagram} alt="Instagram" width={20}/>
+          </Link>
+          <Link href="https://www.linkedin.com/company/packwise/">
+              <Image src={linkedin} alt="LinkedIn" width={20}/>
+          </Link>
+          <Link href="https://www.youtube.com/channel/UCeeI8Qt0BZzzxwG0ZjIc8mw">
+              <Image src={youtube} alt="YouTube" width={20}/>
+          </Link>
         </div>
         <div className={styles.newsletter}>
           <h3>Subscribe To Our Newsletter</h3>
-          <p>In search of inspiration?</p>
-          <p>Sign up for our newsletter</p>
-          <p> to receive insight into </p>
-          <p>the newest trends and tendencies</p>
-          <p> in the market</p>
           <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+            <p>Name*</p>
+            <input type="text"/>
+            <br></br>
+            <p>Email*</p>
+            <input type="email"/>
+            <br></br>
+            <p>By entering your email, you agree to our <a href="#">privecy policy</a></p>
             <button type="submit">Send</button>
+            <br></br>
+            <input type="checkbox"/>
+            <label>Yes, I would like to receive inspirational posts,</label>
+            <label>blogs and other marketing about Packwise by email.</label> 
+            <label>I can unsubscribe from this service at any time and read</label> 
+            <label> more about my personal data in the privacy policy.</label>
           </form>
         </div>
-       
       </footer>
     );
   };
