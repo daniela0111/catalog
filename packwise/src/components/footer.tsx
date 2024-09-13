@@ -41,16 +41,16 @@ const Footer = () => {
           <br></br>
           <h3>Follow us</h3>
           <Link href="https://www.facebook.com/packwise.dk">
-              <Image src={facebook} alt="Facebook" width={20}/>
+              <Image src={facebook} alt="Facebook" width={25}/>
           </Link>
           <Link href="https://www.instagram.com/packwise.dk/">
-              <Image src={instagram} alt="Instagram" width={20}/>
+              <Image src={instagram} alt="Instagram" width={25}/>
           </Link>
           <Link href="https://www.linkedin.com/company/packwise/">
-              <Image src={linkedin} alt="LinkedIn" width={20}/>
+              <Image src={linkedin} alt="LinkedIn" width={25}/>
           </Link>
           <Link href="https://www.youtube.com/channel/UCeeI8Qt0BZzzxwG0ZjIc8mw">
-              <Image src={youtube} alt="YouTube" width={20}/>
+              <Image src={youtube} alt="YouTube" width={25}/>
           </Link>
         </div>
         <div className={styles.newsletter}>
