@@ -4,7 +4,6 @@ import Header from './Header'; // Assuming you have a Header component
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="layout">
-      <Header />
       <main className="main-content">
         {children}
       </main>

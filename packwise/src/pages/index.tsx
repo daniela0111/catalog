@@ -16,7 +16,6 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <nav>
-          <a href="packwise.dk">img </a>
         </nav>
     
       </main>
