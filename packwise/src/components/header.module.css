@@ -9,7 +9,7 @@
   .nav ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
   
   .nav li {
@@ -17,10 +17,14 @@
   }
   
   .nav a {
-    color: #333;
+    color: #000000;
     text-decoration: none;
   }
   
   .nav a:hover {
     text-decoration: underline;
+  }
+
+  .nav link img {
+    margin-left: 3rem;
   }
