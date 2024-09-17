@@ -1,12 +1,14 @@
-import Header from './Header'; // Assuming you have a Header component
-//import Footer from './Footer'; // Assuming you have a Footer component
+import Header from './Header'; 
+import Footer from './Footer'; 
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="layout">
+      <Header /> 
       <main className="main-content">
         {children}
       </main>
+      <Footer /> 
     </div>
   );
 }

@@ -20,8 +20,8 @@ const HeroImage: React.FC<HeroImageProps> = () => {
         <h2>Strategic design</h2>
         <h2>Innovative packaging</h2>
         <p>
-          We design, develop and produce packaging solutions
-          with a focus on sustainability, delivery reliability,
+          We design, develop and produce packaging solutions <br></br>
+          with a focus on sustainability, delivery reliability,<br></br>
           quality and innovation.
         </p>
         <button>See our products</button>

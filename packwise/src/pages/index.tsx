@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>PackWise.dk</title>
+        <title>PackWise.dk homepage</title>
         <meta name="description" content="Packwise.dk E-commerce" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.ico"/>
