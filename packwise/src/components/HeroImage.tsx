@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link'; 
 import styles from './HeroImage.module.css';
-import heroImage from './hero-image.png'; // Import the image as a static asset
+import heroImage from './hero-image.png'; //static asset
 
 interface HeroImageProps {
   // change the image
@@ -10,7 +11,7 @@ const HeroImage: React.FC<HeroImageProps> = () => {
   return (
     <div className={styles.heroImageContainer}>
       <Image
-        src={heroImage} // Use the imported image
+        src={heroImage} 
         alt="Hero image"
         layout="responsive"
         width={1200}
@@ -24,7 +25,11 @@ const HeroImage: React.FC<HeroImageProps> = () => {
           with a focus on sustainability, delivery reliability,<br></br>
           quality and innovation.
         </p>
-        <button>See our products</button>
+        <Link href="/products"> {/* Replace with the actual URL of the target page */}
+          <a>
+            <button>See our products</button>
+          </a>
+        </Link>
       </div>
     </div>
   );
