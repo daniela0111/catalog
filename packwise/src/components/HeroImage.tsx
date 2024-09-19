@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link'; 
 import styles from './HeroImage.module.css';
-import heroImage from './hero-image.png'; //static asset
+import heroImage from './hero-image.png'; 
 
 interface HeroImageProps {
   // change the image

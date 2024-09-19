@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import Cosmetic from './cosmetic.png';
 import styles from './PackagingCategories.module.css';
 
 interface Category {
@@ -8,11 +10,11 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { name: 'Cosmetic packaging', imageSrc: '/public/cosmetic.jpg', link: '/kosmetik' },
-  { name: 'Pharma packaging', imageSrc: '/public/cosmetic.jpg', link: '/pharma' },
-  { name: 'Cleaning packaging', imageSrc: '/public/cosmetic.jpg', link: '/rengoring' },
-  { name: 'Desinfection packaging', imageSrc: '/public/cosmetic.jpg', link: '/desinfektion' },
-  { name: 'Industrial packaging', imageSrc: '/public/cosmetic.jpg', link: '/industri' },
+  { name: 'Cosmetic packaging', imageSrc: Cosmetic, link: '/kosmetik' },
+  { name: 'Pharma packaging', imageSrc: Cosmetic, link: '/pharma' },
+  { name: 'Cleaning packaging', imageSrc: Cosmetic, link: '/rengoring' },
+  { name: 'Desinfection packaging', imageSrc: Cosmetic, link: '/desinfektion' },
+  { name: 'Industrial packaging', imageSrc: Cosmetic, link: '/industri' },
 ];
 
 const PackagingCategories = () => {
@@ -25,7 +27,12 @@ const PackagingCategories = () => {
       Explore our full range of categories and find the perfect packaging solution for your needs.</p>
       {categories.map((category) => (
         <a key={category.name} href={category.link} className={styles.category}>
-          <img src={category.imageSrc} alt={category.name} />
+          <Image
+            src={category.imageSrc}
+            alt={category.name}
+            width={100}
+            height={100}
+          />
           <p>{category.name}</p>
         </a>
       ))}
