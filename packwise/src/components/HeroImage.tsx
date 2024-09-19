@@ -26,9 +26,7 @@ const HeroImage: React.FC<HeroImageProps> = () => {
           quality and innovation.
         </p>
         <Link href="/products"> {/* Replace with the actual URL of the target page */}
-          <a>
             <button>See our products</button>
-          </a>
         </Link>
       </div>
     </div>

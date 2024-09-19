@@ -1,0 +1,18 @@
+.categoriesContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+  }
+  
+  .category {
+    text-align: center;
+    margin: 10px; 
+  }
+  
+  .category img {
+    width: 100%; 
+  }
+  
+  .category p {
+    margin-top: 5px; 
+  }
