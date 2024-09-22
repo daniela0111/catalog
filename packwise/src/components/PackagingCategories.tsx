@@ -25,8 +25,8 @@ const PackagingCategories = () => {
       cosmetics, pharma, cleaning, disinfection and more. From elegant bottles to durable blister packs,<br></br> 
       our packaging solutions ensure top-notch product protection and storage.<br></br> 
       Explore our full range of categories and find the perfect packaging solution for your needs.</p>
-      {categories.map((category) => (
-        <a key={category.name} href={category.link} className={styles.category}>
+      {categories.map((category, index) => (
+        <a key={category.name} href={category.link} className={styles.category} >
           <Image
             src={category.imageSrc}
             alt={category.name}
