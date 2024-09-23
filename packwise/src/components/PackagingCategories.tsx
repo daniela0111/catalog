@@ -21,9 +21,9 @@ const PackagingCategories = () => {
   return (
     <div className={styles.categoriesContainer}>
       <h2>Packaging categories</h2>
-      <p>Discover our extensive range of packaging categories tailored to products in<br></br> 
-      cosmetics, pharma, cleaning, disinfection and more. From elegant bottles to durable blister packs,<br></br> 
-      our packaging solutions ensure top-notch product protection and storage.<br></br> 
+      <p>Discover our extensive range of packaging categories tailored to products in
+      cosmetics, pharma, cleaning, disinfection and more. From elegant bottles to durable blister packs, 
+      our packaging solutions ensure top-notch product protection and storage.
       Explore our full range of categories and find the perfect packaging solution for your needs.</p>
       {categories.map((category, index) => (
         <a key={category.name} href={category.link} className={styles.category} >
