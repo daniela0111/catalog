@@ -1,11 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Cosmetic from './cosmetic.png';
 import styles from './PackagingCategories.module.css';
 
 interface Category {
   name: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   link: string;
 }
 
