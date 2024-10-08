@@ -1,6 +1,6 @@
 
   .category {
-    width: calc(25% - 200%); /* Adjust width as needed */
+    width: calc(25% - 200%); 
     margin: 0.5rem;
     padding: 1rem;
     text-align: left;
