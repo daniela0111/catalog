@@ -16,7 +16,14 @@ export default function Catalog() {
         <link rel="icon" href="/fav.ico"/>
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Hero/>
+        <Image
+        src = "/product_hero.png"
+        width= {1294}
+        height= {255}
+        alt="Hero picture of catalog"
+        layout="responsive"
+        objectFit="cover">
+        </Image>
       </main>
     </>
   );
