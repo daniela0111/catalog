@@ -1,7 +1,7 @@
 //function to fetch products from WooCommerce
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
-// initialise the WooCommerceRestApi 
+//WooCommerceRestApi 
 const api = new WooCommerceRestApi({
   url: "http://localhost/woocommercenextjs",
   consumerKey: process.env.WOOCOMMERCE_KEY!,
