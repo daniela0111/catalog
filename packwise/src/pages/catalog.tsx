@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Hero from "../components/HeroImage";
+import Form from "../components/Form";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +24,9 @@ export default function Catalog() {
         layout="responsive"
         objectFit="cover">
         </Image>
+        <div className="form">
+        <Form/>
+      </div>
       </main>
     </>
   );

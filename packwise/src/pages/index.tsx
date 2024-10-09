@@ -18,7 +18,6 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
       <Hero/>
-      
       <div className="categories">
         <PackagingCategories/>
       </div>
