@@ -1,40 +1,49 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import multer from 'multer';
+import { NextApiRequest, NextApiResponse } from 'next';
+import fs from 'fs';
 import path from 'path';
-import { writeFile } from 'fs/promises';
 
-const upload = multer({ dest: './public/assets/' });
+// Set up multer storage
+const storage = multer.memoryStorage(); // Use memory storage to access the file buffer
+const upload = multer({
+  storage,
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB file size limit
+  fileFilter(req, file, cb) {
+    if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
+      return cb(new Error('Only image files are allowed'));
+    }
+    cb(null, true);
+  },
+});
 
-interface RequestWithFile extends NextApiRequest {
-  file: {
-    buffer: Buffer;
-    originalname: string;
-  };
-}
-
-const POST = async (req: RequestWithFile, res: NextApiResponse) => {
-  upload(req, res, async (err: any) => {
+// Create the API route handler
+const POST = async (req: NextApiRequest, res: NextApiResponse) => {
+  // Use the multer middleware
+  upload.single('file')((req as any), (res as any), async (err: any) => {
     if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({ error: 'File size exceeds the limit' });
+      } else if (err.message === 'Only image files are allowed') {
+        return res.status(400).json({ error: 'Only image files are allowed' });
+      }
       return res.status(400).json({ error: 'Error uploading file' });
     }
 
-    const file = req.file;
+    const file = (req as any).file; // Cast req to any to access file
     if (!file) {
       return res.status(400).json({ error: 'You didn\'t upload any file' });
     }
 
-    const filename = file.originalname.replaceAll(' ', '_');
-    console.log(filename);
+    const filename = `${Date.now()}_${file.originalname}`;
+    const filePath = path.join(process.cwd(), 'public/assets', filename);
 
     try {
-      await writeFile(
-        path.join(process.cwd(), 'public/assets/' + filename),
-        file.buffer
-      );
-      return res.status(201).json({ Message: 'Success' });
+      // Write the file to the desired location
+      fs.writeFileSync(filePath, file.buffer);
+      return res.status(201).json({ message: 'File uploaded successfully', filename });
     } catch (error) {
-      console.log('Error occured ', error);
-      return res.status(500).json({ Message: 'Failed' });
+      console.error('Error occurred ', error);
+      return res.status(500).json({ message: 'Failed to upload file' });
     }
   });
 };
